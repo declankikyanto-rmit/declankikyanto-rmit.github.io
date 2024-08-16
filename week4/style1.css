@@ -1,0 +1,67 @@
+body {
+  background-color: #1a120b;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #e5e5cb;
+  /* color: #3c2a21; */
+  font-size: 1.1rem;
+}
+
+.outer {
+  border: 2px dashed rgba(255, 255, 255, 0.722);
+  width: 400px;
+  height: 200px;
+  color: #3c2a21;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.limebox {
+  background-color: limegreen;
+  flex: 1;
+}
+
+.coralbox {
+  background-color: coral;
+  flex: 1;
+}
+
+.plumbox {
+  background-color: plum;
+}
+
+.box {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #1a120b;
+}
+
+.red-box {
+  background-color: red;
+}
+
+.green-box {
+  background-color: green;
+}
+
+.box-wrapper {
+  display: flex;
+  gap: 10px;
+  width: 400px;
+  min-height: 100px;
+  border: 1px dashed white;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}

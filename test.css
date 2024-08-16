@@ -1,0 +1,413 @@
+:root {
+  --border-color: rgba(255, 255, 255, 0.25);
+  --background-color: rgba(20, 20, 20, 1);
+  --primary-color: rgba(206, 234, 34, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #141414;
+  font-family: "PP Neue Montreal";
+  color: #fff;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "PowerGrotesk";
+  src: url(assets/PowerGroteskTrial-Regular.otf);
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url(assets/PPNeueMontreal-Book.otf);
+}
+
+body {
+  background-color: var(--background-color);
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  /* width: 100vw;
+  /* width: 100%; */
+}
+
+main {
+  width: 100%;
+  position: relative;
+  top: 100px;
+}
+
+h1 {
+  font-family: "PowerGrotesk";
+  font-size: 6.4rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  padding-bottom: 2rem;
+  border-bottom: 0.75px solid var(--border-color);
+}
+
+h2 {
+  font-size: 3.2rem;
+  color: var(--primary-color);
+}
+
+p {
+  font-family: "PP Neue Montreal";
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  display: inline-block;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px 80px 40px;
+  box-sizing: border-box; /* Should I use content box? or border box? Since i want to keep the max-width 1360px */
+}
+
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* NavBar Styling */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  background-color: rgba(20, 20, 20, 0.75);
+  z-index: 1;
+}
+
+.nav-bar {
+  max-width: 1360px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.homepage-link {
+  transition: 0.6s;
+}
+
+.homepage-link:hover {
+  transform: scale(1.1) rotate(-1deg);
+}
+
+/* Heading Styling */
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container {
+  width: 100%;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.container-grid {
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 200px;
+  border-bottom: 0.75px solid var(--border-color);
+}
+
+.main-img {
+  transition: 0.4s;
+}
+
+.main-img:hover {
+  transform: scale(1.01) rotate(-0.25deg);
+}
+
+.column-8 {
+  grid-column: span 8;
+  /* background-color: darkolivegreen; */
+}
+
+.column-8 div {
+  padding: 12px;
+  border: 0.75px solid var(--border-color);
+  border-radius: 20px;
+}
+
+.column-6 {
+  grid-column: span 6;
+  /* background-color: green; */
+}
+
+.column-5 {
+  grid-column: span 5;
+  /* background-color: pink; */
+}
+
+.column-4 {
+  grid-column: span 4;
+  /* background-color: blue; */
+}
+
+.main-info {
+  padding: 12px;
+  border: 0.75px solid var(--border-color);
+  border-radius: 20px;
+  height: 100%;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1a1a18;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.content-wrap > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* background-color: red; */
+}
+
+.content-wrap p {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.content-wrap span,
+.content-wrap span a {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--primary-color);
+}
+
+.column-8 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.space-1 {
+  grid-column: span 1;
+  /* background-color: gold; */
+}
+
+/* Questions Scroll */
+
+#question1,
+#question2,
+#question3,
+#question4,
+#question5,
+#question6,
+#question7,
+#question8,
+#question9,
+#question10,
+#question11,
+#question12,
+#question13 {
+  scroll-margin-top: 100px;
+}
+
+/* Button Styling */
+
+.btn-primary {
+  padding: 8px 12px;
+  background-color: rgba(32, 32, 32, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  transition: 0.6s;
+}
+
+.btn-primary:hover {
+  background-color: rgba(28, 28, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* Label Styling */
+
+.label {
+  display: flex;
+  gap: 6px;
+  width: fit-content;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.label > div {
+  width: fit-content;
+}
+
+/* Card Styling */
+
+.basic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: fit-content;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: #1a1a18;
+  width: fit-content;
+}
+
+.card-images {
+  display: inline-block;
+  background-image: url(assets/card-dummy.jpg);
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+/* Jump Links Styling */
+
+.float-container {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+
+  /* border: 1px solid gold; */
+}
+
+.float-menu {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.jump-link-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.025);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  border: 0.75px solid rgba(255, 255, 255, 0.1);
+}
+
+.jump-link-menu div {
+  text-align: center;
+}
+
+/* TO SOLVE: Same width for all buttons */
+.jump-link-list {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  /* width: fit-content; */
+}
+
+.jump-link-list li {
+  flex: 1;
+}
+
+.jump-link {
+  display: flex;
+  justify-content: center;
+  min-width: 55px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: rgba(32, 32, 32, 0.8);
+  transition: 0.3s;
+}
+
+.jump-link:hover {
+  background-color: rgba(28, 28, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* 
+Kebab Case: declan-kikyanto 
+*/
+
+/* Glow Effect */
+
+.glow {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+      0 0 16px rgba(255, 255, 255, 0.3);
+  }
+
+  to {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.5),
+      0 0 24px rgba(255, 255, 255, 0.4);
+  }
+}

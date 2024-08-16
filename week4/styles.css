@@ -1,0 +1,33 @@
+body {
+  padding: 40px;
+}
+
+@font-face {
+  font-family: "PowerGrotesk";
+  src: url(../assets/PowerGroteskTrial-Regular.otf);
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url(assets/PPNeueMontreal-Book.otf);
+}
+
+h1 {
+  font-family: "PowerGrotesk";
+  font-size: 3.2rem;
+  letter-spacing: 0.5px;
+}
+
+p {
+  border: 1px solid red;
+  width: 300px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  /* min-height: 50px; */
+
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
