@@ -1,0 +1,47 @@
+:root {
+  --border-color: rgba(255, 255, 255, 0.25);
+  --background-color: rgba(20, 20, 20, 1);
+  --primary-color: rgba(206, 234, 34, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #141414;
+  font-family: "PP Neue Montreal";
+  color: #fff;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "PowerGrotesk";
+  src: url(../assets/PowerGroteskTrial-Regular.otf);
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url(../assets/PPNeueMontreal-Book.otf);
+}
+
+h1 {
+  font-family: "PowerGrotesk";
+  font-size: 6.4rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  /* padding-bottom: 2rem;
+  border-bottom: 0.75px solid var(--border-color); */
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
