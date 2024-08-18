@@ -1,14 +1,20 @@
+/* Created color swatched for easy color choosing */
+
 :root {
   --border-color: rgba(255, 255, 255, 0.25);
   --background-color: rgba(20, 20, 20, 1);
   --primary-color: rgba(206, 234, 34, 1);
 }
 
+/* Remove universal padding and margin so that I can design more freely for each elements within the website + Use border-box so that its easier to maintain consistent sizing for my elements. */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+/* Used smooth scroll behaviour so Users can jump to questions easily and smoothly. Also made the font-size 62.5% (making the universal font 10px - this way its easier for me to adjust since its the multiplication of 10 */
 
 html {
   background-color: #141414;
@@ -17,6 +23,8 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
+
+/* Adding in some personal fonts */
 
 @font-face {
   font-family: "PowerGrotesk";
@@ -87,7 +95,8 @@ section {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 40px 80px 40px;
-  box-sizing: border-box; /* Should I use content box? or border box? Since i want to keep the max-width 1360px */
+  box-sizing: border-box;
+  /* Design Process: Should I use content box? or border box? Since i want to keep the max-width 1360px */
 }
 
 .answer-section {
@@ -98,6 +107,7 @@ section {
 
 /* NavBar Styling */
 
+/* Outer container for Navigation Bar -> Make sure its responsive */
 header {
   position: fixed;
   top: 0;
@@ -115,6 +125,9 @@ header {
   z-index: 1;
 }
 
+/* Inner styling for the Navigation Bar
+  Justify-content: space-between -> make 2 elements go far left and right
+  Margin: 0 auto -> center the container */
 .nav-bar {
   max-width: 1360px;
   width: 100%;
@@ -127,6 +140,8 @@ header {
 .homepage-link {
   transition: 0.6s;
 }
+
+/* Just some hover actions */
 
 .homepage-link:hover {
   transform: scale(1.1) rotate(-1deg);
@@ -149,6 +164,8 @@ header {
   flex-direction: column;
   gap: 40px;
 }
+
+/* Wanted the content for each parts to take a certain % of the parent container, so I decided to use Grid and divided it into 12 column */
 
 .container-grid {
   /* background-color: red; */
@@ -173,6 +190,8 @@ header {
   transform: scale(1.01) rotate(-0.25deg);
 }
 
+/* Then I used different class to differentiate various container. E.g. column-8 is for a container that takes 8 column out of the 12 column, this way when the screen is resized the content is also resized and kept consistent */
+
 .column-8 {
   grid-column: span 8;
   /* background-color: darkolivegreen; */
@@ -183,6 +202,8 @@ header {
   border: 0.75px solid var(--border-color);
   border-radius: 20px;
 }
+
+/* Same goes for column-6, column-5, and column-4. If you can see there is color being commented out on each class, this is because in the process of building my website having this background-color makes it easy to distinguish different container and how it works. */
 
 .column-6 {
   grid-column: span 6;
@@ -198,6 +219,8 @@ header {
   grid-column: span 4;
   /* background-color: blue; */
 }
+
+/* This class was made for the outer gray-ish box. */
 
 .main-info {
   padding: 12px;
@@ -247,12 +270,15 @@ header {
   border-radius: 8px;
 }
 
+/* I also used space-1 class that takes 1 column as a replacement for "space-between" since we're using Grid, not Flex */
+
 .space-1 {
   grid-column: span 1;
   /* background-color: gold; */
 }
 
-/* Questions Scroll */
+/* Questions Scroll*/
+/* This is all jump links with a margin-top of 100px, so that when users clicks it goes to that point and 100px margin from the top */
 
 #question1,
 #question2,
@@ -277,6 +303,8 @@ header {
 }
 
 /* Button Styling */
+
+/* This is just a basic button styling and with a pseudo class of hover */
 
 .btn-primary {
   padding: 8px 12px;
@@ -352,6 +380,8 @@ header {
 
 /* Jump Links Styling */
 
+/* This is the most challenging part to make for my website, making the jump-link menu on the bottom of the screen. So what I did was I got inspired from Awwwards and inspected how their jump-link menu works. So I learnt that instead of just floating and using position:absolute for the container on the middle, they created another container as its parents container and make the width 100% and margin: 0 auto, to make the actual box stays in the middle. Then from there Awwwards just adjust the parent container (invisible container) rather than the actual jump-link menu. This way it is also responsive! */
+
 .float-container {
   position: fixed;
   bottom: 40px;
@@ -416,6 +446,8 @@ Kebab Case: declan-kikyanto
 */
 
 /* Glow Effect */
+
+/* I was just experimenting and want to add some animations within my website. So I searched how to do glow effects in W3Schools and I just learned and adjust the colors and transitions to achieve a slight breathing glow. */
 
 .glow {
   animation: glow 1.5s ease-in-out infinite alternate;
