@@ -1,0 +1,28 @@
+DOM document object model
+Select:
+
+querySelector - select an element - id, element, class
+consy heading = document.querySelector("h1/#id/.class);
+
+querySelectorAll - select multiple elements - element or class
+const allParas = document.querySelectorAll("p");
+
+Modify:
+textContent = text content of para, heading
+heading.textContent = "new heading"
+
+= replace the content
++= appends (add) new content 
+
+innerHTML = "<p> new para </p>"
+innerHTML = `<p class="red"> new para </p>`
+
+classList.add / remove / toggle
+
+Event listeners:
+
+
+% -
+4/2 = 2
+4%2 = 0 (remainder)
+5%2 = 1
