@@ -95,6 +95,8 @@ main {
   width: 100%;
   margin-right: 360px;
   margin-bottom: 96px;
+  height: fit-content;
+  overflow: hidden;
 }
 
 .main-tab {
@@ -109,10 +111,25 @@ main {
   border-radius: 8px;
 }
 
+.main-banner {
+  display: flex;
+  align-items: end;
+  background-image: url(https://www.thenation.com/wp-content/uploads/2018/04/Hajdu_Kendrick-Lamar_AP.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 840px;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.main-banner > span {
+  font-size: 7.2rem;
+}
+
 .main-media {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
   overflow: hidden;
 }
 
@@ -325,6 +342,7 @@ aside {
 .mp-album-cover img {
   width: 100%;
   height: 100%;
+  border-radius: 4px;
 }
 
 .media-player-control {
@@ -333,20 +351,39 @@ aside {
   gap: 24px;
 }
 
-#shuffle-btn,
-#front-play-btn,
-#back-play-btn,
+#unmute-btn,
+#back-btn,
+#skip-btn,
 #repeat-btn {
   width: 24px;
   height: 24px;
+  transition: scale 0.1s linear;
+}
+
+#unmute-btn:hover,
+#back-btn:hover,
+#skip-btn:hover,
+#repeat-btn:hover {
+  scale: 1.05;
 }
 
 #play-btn {
   width: 40px;
   height: 40px;
+  transition: scale 0.1s linear;
+}
+
+#play-btn:hover {
+  scale: 1.05;
 }
 
 button {
   background-color: transparent;
   border: 0;
+}
+
+.right-side-control {
+  display: flex;
+  justify-content: end;
+  width: 250px;
 }

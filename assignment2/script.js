@@ -116,3 +116,68 @@ function playMedia(no) {
   mainMedia.load();
   mainMedia.play();
 }
+
+// Skip and Back functionality
+
+const skipBtn = document.querySelector("#skip-btn");
+skipBtn.addEventListener("click", skipSong);
+
+const backBtn = document.querySelector("#back-btn");
+backBtn.addEventListener("click", backSong);
+
+let currentIndex = 0;
+
+function backSong() {
+  console.log("Previous Song Loading");
+  currentIndex = (currentIndex - 1 + songList.length) % songList.length;
+  console.log(currentIndex);
+  playMedia(currentIndex);
+}
+
+function skipSong() {
+  console.log("Next Song Loading");
+  currentIndex = (currentIndex + 1) % songList.length;
+  console.log(currentIndex);
+  playMedia(currentIndex);
+}
+
+// Repeat functionality
+let repeat = false;
+
+const repeatBtn = document.querySelector("#repeat-btn");
+repeatBtn.addEventListener("click", repeatSong);
+
+mainMedia.addEventListener("ended", replay);
+
+function replay() {
+  console.log("Repeat is", repeat);
+  if (repeat) {
+    mainMedia.currentTime = 0;
+    mainMedia.play();
+  }
+}
+
+function repeatSong() {
+  if (repeat) {
+    repeat = false;
+    repeatBtn.style.backgroundColor = "transparent";
+  } else {
+    repeat = true;
+    repeatBtn.style.backgroundColor = "gold";
+  }
+}
+
+// Mute and unmute functionality
+
+const muteUnmuteBtn = document.querySelector("#unmute-btn");
+muteUnmuteBtn.addEventListener("click", toggleMuteUnmute);
+
+function toggleMuteUnmute() {
+  if (mainMedia.muted) {
+    mainMedia.muted = false;
+    muteUnmuteBtn.src = "unmute.svg";
+  } else {
+    mainMedia.muted = true;
+    muteUnmuteBtn.src = "mute.svg";
+  }
+}
