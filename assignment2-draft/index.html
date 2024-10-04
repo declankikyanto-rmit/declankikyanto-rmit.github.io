@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="grid-container">
+        <a href="" class="homepage-link col-span-2">Anderson Paak.</a>
+        <div class="search-box col-span-3">Search Box</div>
+      </div>
+    </header>
+    <main>
+      <div class="flex-container margin-top">
+        <div class="main">
+          <div class="main-tab">
+            <a class="tab" href="">Home</a>
+            <a class="tab" href="">Music Video</a>
+          </div>  
+          <div class="main-media">
+            <video controls>
+              <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4">
+            </video>
+          </div>
+          <div class="album-section">
+            <div class="album">Album</div>
+            <!-- Album List content inserted by JS -->
+            <div class="album-list" id="album-list"></div>
+          </div>
+        </div>
+        <aside>
+          <div class="badges-section">
+            <h3>Badges</h3>
+            <div class="badges-list">
+              <div class="badge-card">Grammy-winning artist</div>
+              <div class="badge-card">Soulful vibes</div>
+              <div class="badge-card">Multi-instrumentalist</div>
+            </div>
+          </div>
+          <div class="top-song-section">
+            <h3>Top Songs</h3>
+            <!-- Top Songs content inserted by JS -->
+            <audio id="audio-player" src="" controls></audio>
+            <div class="top-song-list" id="top-song-list">
+              <div class="song-card">
+                <img src="why-lawd.png" alt="" />
+                <div class="album-label">
+                  <div class="album-title">a</div>
+                  <div class="album-subtitle">a</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <section class="media-player">
+        <div class="mp-song-display">
+          <div class="mp-album-cover">
+            <img src="why-lawd.png" alt="" />
+          </div>
+          <div class="album-label">
+            <div class="album-title">Song Title</div>
+            <div class="album-subtitle">Artist</div>
+          </div>
+        </div>
+        <div class="media-player-control">
+          <img id="shuffle-btn" src="shuffle.svg" alt=""></img>
+          <img id="back-play-btn" src="back-play.svg" alt=""></img>
+          <img id="play-btn" src="play-circular.svg" alt=""></img>
+          <img id="front-play-btn" src="front-play.svg" alt=""></img>
+          <img id="repeat-btn" src="repeat.svg" alt=""></img>
+        </div>
+        <div>buttons</div>
+      </section>
+    </main>
+  </body>
+</html>

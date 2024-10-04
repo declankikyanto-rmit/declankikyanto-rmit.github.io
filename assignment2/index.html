@@ -10,8 +10,8 @@
   <body>
     <header>
       <div class="grid-container">
-        <a href="" class="homepage-link col-span-2">Anderson Paak.</a>
-        <div class="search-box col-span-3">Search Box</div>
+        <a href="" class="homepage-link col-span-2">Kendrick Lamar</a>
+        <!-- <div class="search-box col-span-3">Search Box</div> -->
       </div>
     </header>
     <main>
@@ -20,14 +20,12 @@
           <div class="main-tab">
             <a class="tab" href="">Home</a>
             <a class="tab" href="">Music Video</a>
-          </div>
+          </div>  
           <div class="main-media">
-            <div>Anderson Paak.</div>
+            <audio id="main-media">
+              <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3" type="audio/mp3">
+            </audio>
           </div>
-          <div class="album-section">
-            <div class="album">Album</div>
-            <!-- Album List content inserted by JS -->
-            <div class="album-list" id="album-list"></div>
           </div>
         </div>
         <aside>
@@ -41,35 +39,42 @@
           </div>
           <div class="top-song-section">
             <h3>Top Songs</h3>
+            
             <!-- Top Songs content inserted by JS -->
             <div class="top-song-list" id="top-song-list">
-              <div class="song-card">
-                <img src="why-lawd.png" alt="" />
-                <div class="album-label">
-                  <div class="album-title">a</div>
-                  <div class="album-subtitle">a</div>
+                <div class="song-card" >
+                    <div class="album-cover-container">
+                      <img src="" alt="" />
+                      <div class="song-play-btn">
+                        <img src="play.svg"></img>
+                      </div>
+                    </div>
+                    <div class="album-label">
+                      <div class="album-title">Leave the Door Open</div>
+                      <div class="album-subtitle">Bruno Mars, Anderson Paak., Silk Sonic</div>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </aside>
       </div>
       <section class="media-player">
-        <div class="song-card">
-          <img src="why-lawd.png" alt="" />
+        <div class="mp-song-display">
+          <div class="mp-album-cover">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDngoYDBhtPOpelODDFr8Bu9TN82kIbNGjw&s" alt="" id="currently-played-album-cover"/>
+          </div>
           <div class="album-label">
-            <div class="album-title">Song Title</div>
-            <div class="album-subtitle">Artist</div>
+            <div class="album-title" id="currently-played-title">Song Title</div>
+            <div class="album-subtitle" id="currently-played-subtitle">Artist</div>
           </div>
         </div>
         <div class="media-player-control">
           <img id="shuffle-btn" src="shuffle.svg" alt=""></img>
           <img id="back-play-btn" src="back-play.svg" alt=""></img>
-          <img id="play-btn" src="play.svg" alt=""></img>
+          <img id="play-btn" src="play-circular.svg" alt=""></img>
           <img id="front-play-btn" src="front-play.svg" alt=""></img>
           <img id="repeat-btn" src="repeat.svg" alt=""></img>
         </div>
-        <div>buttons</div>
       </section>
     </main>
   </body>

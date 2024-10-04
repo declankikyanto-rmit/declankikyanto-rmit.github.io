@@ -1,0 +1,343 @@
+:root {
+  --border-color: rgba(255, 255, 255, 0.12);
+  --bg-color: rgba(20, 20, 20, 1);
+}
+
+html {
+  background-color: #141414;
+  font-family: "PP Neue Montreal";
+  color: #fff;
+  font-size: 62.5%;
+}
+
+/* Font Styling */
+
+@font-face {
+  font-family: "PowerGrotesk";
+  src: url(../assets/PowerGroteskTrial-Regular.otf);
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url(../assets/PPNeueMontreal-Book.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Container styling */
+
+.flex-container {
+  display: flex;
+  gap: 16px;
+}
+
+.grid-container {
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+/* Navbar styling */
+
+header {
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  background-color: var(--bg-color);
+  width: 100%;
+  z-index: 2;
+}
+
+.search-box {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* Main styling */
+
+main {
+  padding-top: 65.5px;
+}
+
+.main {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  padding: 24px 40px 0 40px;
+  gap: 24px;
+  width: 100%;
+  margin-right: 360px;
+  margin-bottom: 96px;
+}
+
+.main-tab {
+  display: flex;
+  gap: 12px;
+}
+
+.tab {
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.main-media {
+  display: flex;
+  align-items: end;
+  height: 560px;
+  padding: 24px 32px;
+  /* background-color: gold; */
+  background-image: url(anderson-paak..png);
+  background-size: cover;
+  font-size: 4.8rem;
+  border-radius: 8px;
+}
+
+/* Album Cover */
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.album {
+  font-size: 2rem;
+}
+
+.album-list {
+  display: flex;
+  gap: 16px;
+}
+
+.album-card {
+  /* background-color: coral; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.album-cover {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 270px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s;
+}
+
+.album-cover:hover {
+  transform: scale(1.01);
+}
+
+/* Gotta fix the Album Cover */
+.album-cover img {
+  background-size: contain;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.album-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* flex-grow: 1; */
+  /* I learn from ChatGPT */
+  min-width: 0;
+  width: 100%;
+}
+
+.album-title,
+.album-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.album-title {
+  font-size: 1.6rem;
+  color: #fff;
+  width: 100%;
+}
+
+.album-subtitle {
+  font-size: 1.4rem;
+  color: #c2c2c2;
+  width: 100%;
+}
+
+/* Aside styling */
+
+aside {
+  /* background-color: pink; */
+  min-width: 360px;
+  padding: 24px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-left: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+
+  /* Sticky positioning */
+  position: fixed;
+  top: 65.5px;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+}
+
+.badges-section,
+.top-song-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 12px;
+}
+
+.badge-card {
+  width: fit-content;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  line-height: 1.25;
+  row-gap: 12px;
+}
+
+.top-song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.song-card {
+  max-width: 295px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.album-cover-container {
+  position: relative;
+  width: 100%;
+  max-width: 48px;
+  height: 48px;
+}
+
+.album-cover-container > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.song-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.song-card:hover .song-play-btn {
+  opacity: 1;
+}
+
+/* Media Player */
+
+.media-player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 16px 40px;
+  background-color: var(--bg-color);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.mp-song-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mp-album-cover {
+  min-width: 48px;
+  height: 48px;
+}
+
+.mp-album-cover img {
+  width: 100%;
+  height: 100%;
+}
+
+.media-player-control {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+#shuffle-btn,
+#front-play-btn,
+#back-play-btn,
+#repeat-btn {
+  width: 24px;
+  height: 24px;
+}
+
+#play-btn {
+  width: 40px;
+  height: 40px;
+}

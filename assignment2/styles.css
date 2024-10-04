@@ -110,15 +110,18 @@ main {
 }
 
 .main-media {
-  display: flex;
-  align-items: end;
-  height: 560px;
-  padding: 24px 32px;
-  /* background-color: gold; */
-  background-image: url(anderson-paak..png);
-  background-size: cover;
-  font-size: 4.8rem;
-  border-radius: 8px;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.main-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Album Cover */
@@ -152,7 +155,7 @@ main {
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
-  max-height: 250px;
+  max-height: 270px;
   border: 1px solid var(--border-color);
   transition: transform 0.3s;
 }
@@ -176,6 +179,7 @@ main {
   /* flex-grow: 1; */
   /* I learn from ChatGPT */
   min-width: 0;
+  width: 100%;
 }
 
 .album-title,
@@ -256,10 +260,38 @@ aside {
   cursor: pointer;
 }
 
-.song-card > img {
-  width: 48px;
+.album-cover-container {
+  position: relative;
+  width: 100%;
+  max-width: 48px;
   height: 48px;
-  border-radius: 8px;
+}
+
+.album-cover-container > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.song-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.song-card:hover .song-play-btn {
+  opacity: 1;
 }
 
 /* Media Player */
@@ -276,6 +308,23 @@ aside {
   width: 100%;
   bottom: 0;
   border-top: 1px solid var(--border-color);
+}
+
+.mp-song-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 250px;
+}
+
+.mp-album-cover {
+  min-width: 48px;
+  height: 48px;
+}
+
+.mp-album-cover img {
+  width: 100%;
+  height: 100%;
 }
 
 .media-player-control {
@@ -295,4 +344,9 @@ aside {
 #play-btn {
   width: 40px;
   height: 40px;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
 }

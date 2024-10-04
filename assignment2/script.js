@@ -1,239 +1,118 @@
-const albumDatabase = [
+const songList = [
   {
-    albumId: 1,
-    title: "Why Lawd?",
-    year: "2024",
-    type: "Album",
-    image: "why-lawd.png",
-    songs: [
-      {
-        songTitle: "ThankU (feat. Dave Chappelle)",
-        artist: "NxWorries, Anderson Paak., Knxwledge, Dave Chappelle",
-        trackNumber: 1,
-        url: "https://open.spotify.com/track/6A5axPueEwxqUdi5JtZlpW?si=1b77cdae3a594ad5",
-      },
-      {
-        songTitle: "86Sentra",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 2,
-      },
-      {
-        songTitle: "MoveOn",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 3,
-      },
-      {
-        songTitle: "KeepHer (feat. Thundercat)",
-        artist: "NxWorries, Anderson Paak., Knxwledge, Thundercat",
-        trackNumber: 4,
-      },
-      {
-        songTitle: "Distractions",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 5,
-      },
-      {
-        songTitle: "Lookin'",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 6,
-      },
-      {
-        songTitle: "Where I Go (feat. H.E.R.)",
-        artist: "NxWorries, Anderson Paak., H.E.R., Knxwledge",
-        trackNumber: 7,
-      },
-      {
-        songTitle: "Daydreaming",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 8,
-      },
-      {
-        songTitle: "FromHere (feat. Snoop Dogg & October London)",
-        artist:
-          "NxWorries, Anderson Paak., Knxwledge, Snoop Dogg, October London",
-        trackNumber: 9,
-      },
-      {
-        songTitle: "FallThru",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 10,
-      },
-      {
-        songTitle: "Battlefield",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 11,
-      },
-      {
-        songTitle: "HereIAm",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 12,
-      },
-      {
-        songTitle: "OutTheWay (feat. Rae Khalil)",
-        artist: "NxWorries, Anderson Paak., Knxwledge, Rae Khalil",
-        trackNumber: 13,
-      },
-      {
-        songTitle: "SheUsed",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 14,
-      },
-      {
-        songTitle: "MoreOfIt",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 15,
-      },
-      {
-        songTitle: "NVR.RMX (feat. Charlie Wilson)",
-        artist: "NxWorries, Anderson Paak., Knxwledge, Charlie Wilson",
-        trackNumber: 16,
-      },
-      {
-        songTitle: "DistantSpace (feat. The Last Artful, Dodgr)",
-        artist: "NxWorries, Anderson Paak., Knxwledge, The Last Artful, Dodgr",
-        trackNumber: 17,
-      },
-      {
-        songTitle: "WalkOnBy (feat. Earl Sweatshirt & Rae Khalil)",
-        artist:
-          "NxWorries, Anderson Paak., Knxwledge, Earl Sweatshirt, Rae Khalil",
-        trackNumber: 18,
-      },
-      {
-        songTitle: "EvnMore",
-        artist: "NxWorries, Anderson Paak., Knxwledge",
-        trackNumber: 19,
-      },
-    ],
+    songName: "Not Like Us",
+    artist: "Kendrick Lamar",
+    src: "Not Like Us.mp3",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8_H5FC_4F4GNE-LhC8gXGwm19kuFGNImxGw&s",
+    id: "song-1",
   },
   {
-    albumId: 2,
-    title: "An Evening With Silk Sonic",
-    year: "2021",
-    type: "Album",
-    image: "why-lawd.png",
+    songName: "All The Stars (with SZA)",
+    artist: "Kendrick Lamar, SZA",
+    src: "Kendrick Lamar, SZA - All The Stars.mp3",
+    img: "https://i.scdn.co/image/ab67616d00001e02c027ad28821777b00dcaa888",
+    id: "song-2",
   },
   {
-    albumId: 3,
-    title: "Ventura (Instrumentals)",
-    year: "2019",
-    type: "Album",
-    image: "why-lawd.png",
+    songName: "Like That",
+    artist: "Future, Metro Boomin, Kendrick Lamar",
+    src: "Future, Metro Boomin - Like That (Official Audio).mp3",
+    img: "https://cdns-images.dzcdn.net/images/cover/544249214bc4cf9e3763707d4cb4dfc5/1900x1900-000000-80-0-0.jpg",
+    id: "song-3",
   },
   {
-    albumId: 4,
-    title: "Ventura",
-    year: "2019",
-    type: "Album",
-    image: "why-lawd.png",
-  },
-  {
-    albumId: 4,
-    title: "Malibu",
-    year: "2016",
-    type: "Album",
-    image: "why-lawd.png",
+    songName: "HUMBLE.",
+    artist: "Kendrick Lamar",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDngoYDBhtPOpelODDFr8Bu9TN82kIbNGjw&s",
+    img: "https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3",
+    id: "song-4",
   },
 ];
 
-// const albumLabel = document.querySelector(".album-label");
-
-const albumList = document.querySelector("#album-list");
-console.log(albumList);
-let postAlbum = "";
-for (let i = 0; i < albumDatabase.length; i++) {
-  postAlbum += `
-    <div class="album-card">
-        <div class="album-cover">
-          <img src="${albumDatabase[i].image}" alt="" />
-        </div>
-        <div class="album-label">
-            <div class="album-title">${albumDatabase[i].title}</div>
-            <div class="album-subtitle">${albumDatabase[i].year}</div>
-        </div>
-    </div>
-  `;
-}
-
-albumList.innerHTML = postAlbum;
-
-// Top Songs
-
-topSongsDatabase = [
-  {
-    id: 1,
-    songName: "Leave the Door Open",
-    artist: "Bruno Mars, Anderson Paak., Silk Sonic",
-    image: "why-lawd.png",
-  },
-  {
-    id: 2,
-    songName: "places to be",
-    artist: "Fred again.., Anderson Paak. CHIKA",
-    image: "why-lawd.png",
-  },
-  {
-    id: 3,
-    songName: "Smoking Out The Window",
-    artist: "Bruno Mars, Anderson Paak., Silk Sonic",
-    image: "why-lawd.png",
-  },
-  {
-    id: 4,
-    songName: "After Last Night (with Thundercat & Bootsy Collins)",
-    artist: "Fred again.., Anderson Paak. CHIKA",
-    image: "why-lawd.png",
-  },
-  {
-    id: 5,
-    songName: "Dang! (feat. Anderson Paak.)",
-    artist: "Mac Miller, Anderson Paak.",
-    image: "why-lawd.png",
-  },
-  {
-    id: 6,
-    songName: "Skate",
-    artist: "Bruno Mars, Anderson Paak., Silk Sonic",
-    image: "why-lawd.png",
-  },
-  {
-    id: 7,
-    songName: "Come Down",
-    artist: "Anderson Paak.",
-    image: "why-lawd.png",
-  },
-  {
-    id: 8,
-    songName: "Love's Train",
-    artist: "Bruno Mars, Anderson Paak., Silk Sonic",
-    image: "why-lawd.png",
-  },
-  {
-    id: 9,
-    songName: "Am I Wrong (feat. ScHoolboy Q)",
-    artist: "Anderson Paak., ScHoolboy Q",
-    image: "why-lawd.png",
-  },
-  {
-    id: 10,
-    songName: "Make it Better (feat. Smokey Robinson)",
-    artist: "Anderson Paak., Smokey Robninson",
-    image: "why-lawd.png",
-  },
-];
+// Rendering the song-list
 
 const topSongList = document.querySelector("#top-song-list");
-console.log(topSongList);
-let postTopSong = "";
-for (let i = 0; i < topSongsDatabase.length; i++) {
+
+var postTopSong = "";
+for (var i = 0; i < songList.length; i++) {
   postTopSong += `
-    <div class="song-card">
-        <img src="${topSongsDatabase[i].image}" alt="" />
-            <div class="album-label">
-                <div class="album-title">${topSongsDatabase[i].songName}</div>
-                <div class="album-subtitle">${topSongsDatabase[i].artist}</div>
-            </div>
+    <div class="song-card" id=${songList[i].id}>
+        <button class="album-cover-container">
+          <img src="${songList[i].img}" alt="" />
+          <div class="song-play-btn">
+            <img src="play.svg"></img>
+          </div>
+        </button>
+        <div class="album-label">
+          <div class="album-title">${songList[i].songName}</div>
+          <div class="album-subtitle">${songList[i].artist}</div>
+        </div>  
     </div>`;
 }
 
+// Insert song list into DOM
 topSongList.innerHTML = postTopSong;
+
+// Make const that is needed for Song Details
+const currentlyPlayedTitle = document.querySelector("#currently-played-title");
+const currentlyPlayedSubtitle = document.querySelector(
+  "#currently-played-subtitle"
+);
+const currentlyPlayedAlbumCover = document.querySelector(
+  "#currently-played-album-cover"
+);
+
+const mainAudio = document.querySelector("#main-audio");
+console.log(mainAudio);
+
+const mainMedia = document.querySelector("#main-media");
+console.log(mainMedia);
+
+// 1st Song
+const firstSongBtn = document.querySelector("#song-1");
+
+firstSongBtn.addEventListener("click", function playIt() {
+  mainMedia.pause();
+  playMedia(0);
+});
+
+// 2nd Song
+const secondSongBtn = document.querySelector("#song-2");
+secondSongBtn.addEventListener("click", function playIt() {
+  mainMedia.pause();
+  playMedia(1);
+});
+
+// 3rd Song
+const thirdSongBtn = document.querySelector("#song-3");
+thirdSongBtn.addEventListener("click", function playIt() {
+  mainMedia.pause();
+  playMedia(2);
+});
+
+// Play Button functionality
+const playBtn = document.querySelector("#play-btn");
+console.log(playBtn);
+
+playBtn.addEventListener("click", playAudioVideo);
+
+function playAudioVideo() {
+  if (mainMedia.paused || mainMedia.ended) {
+    mainMedia.play();
+    playBtn.src = "pause-circular.svg";
+  } else {
+    mainMedia.pause();
+    playBtn.src = "play-circular.svg";
+  }
+}
+
+// playMedia function
+function playMedia(no) {
+  mainMedia.pause();
+  mainMedia.src = songList[no].src;
+  currentlyPlayedTitle.textContent = songList[no].songName;
+  currentlyPlayedSubtitle.textContent = songList[no].artist;
+  currentlyPlayedAlbumCover.src = songList[no].img;
+  mainMedia.load();
+  mainMedia.play();
+}
