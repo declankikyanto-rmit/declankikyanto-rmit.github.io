@@ -387,3 +387,18 @@ button {
   justify-content: end;
   width: 250px;
 }
+
+.button {
+  display: flex;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  /* background-color: red; */
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  cursor: pointer;
+  transition: scale 0.3s linear;
+}
+
+.button:hover {
+  scale: 1.025;
+}

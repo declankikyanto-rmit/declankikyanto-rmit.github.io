@@ -1,3 +1,6 @@
+// To start off the development process of my media player, I started by creating objects (song details) inside an array. I included details such as:
+// songName, artist, src of audio, album cover image, and also an Id to distinguish it from other songs.
+
 const songList = [
   {
     songName: "Not Like Us",
@@ -29,7 +32,7 @@ const songList = [
   },
 ];
 
-// Rendering the song-list
+// Then from there, from what I learnt in class, I used a for-loop to rendering each song in the song list and append it into the HTML
 
 const topSongList = document.querySelector("#top-song-list");
 
@@ -50,10 +53,10 @@ for (var i = 0; i < songList.length; i++) {
     </div>`;
 }
 
-// Insert song list into DOM
+// I then insert these songs
 topSongList.innerHTML = postTopSong;
 
-// Make const that is needed for Song Details
+// Then from there, I created variables that lets me update the song label with any song that is currently playing, this can be seen on the bottom left of the website.
 const currentlyPlayedTitle = document.querySelector("#currently-played-title");
 const currentlyPlayedSubtitle = document.querySelector(
   "#currently-played-subtitle"
@@ -61,9 +64,6 @@ const currentlyPlayedSubtitle = document.querySelector(
 const currentlyPlayedAlbumCover = document.querySelector(
   "#currently-played-album-cover"
 );
-
-const mainAudio = document.querySelector("#main-audio");
-console.log(mainAudio);
 
 const mainMedia = document.querySelector("#main-media");
 console.log(mainMedia);
@@ -74,6 +74,7 @@ const firstSongBtn = document.querySelector("#song-1");
 firstSongBtn.addEventListener("click", function playIt() {
   mainMedia.pause();
   playMedia(0);
+  playBtn.src = "pause-circular.svg";
 });
 
 // 2nd Song
@@ -81,6 +82,7 @@ const secondSongBtn = document.querySelector("#song-2");
 secondSongBtn.addEventListener("click", function playIt() {
   mainMedia.pause();
   playMedia(1);
+  playBtn.src = "pause-circular.svg";
 });
 
 // 3rd Song
@@ -88,6 +90,7 @@ const thirdSongBtn = document.querySelector("#song-3");
 thirdSongBtn.addEventListener("click", function playIt() {
   mainMedia.pause();
   playMedia(2);
+  playBtn.src = "pause-circular.svg";
 });
 
 // Play Button functionality
@@ -125,23 +128,25 @@ skipBtn.addEventListener("click", skipSong);
 const backBtn = document.querySelector("#back-btn");
 backBtn.addEventListener("click", backSong);
 
-let currentIndex = 0;
+let songOrder = 0;
 
 function backSong() {
   console.log("Previous Song Loading");
-  currentIndex = (currentIndex - 1 + songList.length) % songList.length;
-  console.log(currentIndex);
-  playMedia(currentIndex);
+  songOrder = (songOrder - 1 + songList.length) % songList.length;
+  console.log(songOrder);
+  playMedia(songOrder);
+  playBtn.src = "pause-circular.svg";
 }
 
 function skipSong() {
   console.log("Next Song Loading");
-  currentIndex = (currentIndex + 1) % songList.length;
-  console.log(currentIndex);
-  playMedia(currentIndex);
+  songOrder = (songOrder + 1) % songList.length;
+  console.log(songOrder);
+  playMedia(songOrder);
+  playBtn.src = "pause-circular.svg";
 }
 
-// Repeat functionality
+// Repeat functionality (maybe change)
 let repeat = false;
 
 const repeatBtn = document.querySelector("#repeat-btn");
@@ -181,3 +186,16 @@ function toggleMuteUnmute() {
     muteUnmuteBtn.src = "mute.svg";
   }
 }
+
+//  Randomizer functionality
+const randomBtn = document.querySelector("#randomize-btn");
+randomBtn.addEventListener("click", getRandomSong);
+
+function getRandomSong() {
+  const randomIndex = Math.floor(Math.random() * songList.length);
+  playMedia(randomIndex);
+  playBtn.src = "pause-circular.svg";
+}
+
+console.log(3 % 4);
+console.log(1 % 4);
