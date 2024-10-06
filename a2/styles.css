@@ -90,7 +90,7 @@ main {
   /* background-color: red; */
   display: flex;
   flex-direction: column;
-  padding: 24px 40px 0 40px;
+  padding: 24px 24px 0 24px;
   gap: 24px;
   width: 100%;
   margin-right: 360px;
@@ -118,7 +118,7 @@ main {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 840px;
+  height: 800px;
   border-radius: 12px;
   padding: 40px;
 }
@@ -315,9 +315,11 @@ aside {
 
 .media-player {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
   justify-content: space-between;
   align-items: center;
-  height: 72px;
+  height: fit-content;
   padding: 16px 40px;
   background-color: var(--bg-color);
   position: fixed;
@@ -325,6 +327,19 @@ aside {
   width: 100%;
   bottom: 0;
   border-top: 1px solid var(--border-color);
+}
+
+.top-section-media-player {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom-section-media-player {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .mp-song-display {
@@ -385,13 +400,19 @@ button {
 .right-side-control {
   display: flex;
   justify-content: end;
+  align-items: center;
+  gap: 8px;
   width: 250px;
 }
 
 .button {
   display: flex;
+  gap: 8px;
+  align-items: center;
   font-size: 1.4rem;
   padding: 8px 12px;
+  width: fit-content;
+  height: fit-content;
   /* background-color: red; */
   border-radius: 8px;
   border: 1.5px solid var(--border-color);
@@ -401,4 +422,30 @@ button {
 
 .button:hover {
   scale: 1.025;
+}
+
+#progress-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* border: 4px solid #fff; */
+}
+
+#progress-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
 }

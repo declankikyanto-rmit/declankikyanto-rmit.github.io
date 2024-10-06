@@ -62,24 +62,34 @@
         </aside>
       </div>
       <section class="media-player">
-        <div class="mp-song-display">
-          <div class="mp-album-cover">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8_H5FC_4F4GNE-LhC8gXGwm19kuFGNImxGw&s" alt="" id="currently-played-album-cover"/>
-          </div>
-          <div class="album-label">
-            <div class="album-title" id="currently-played-title">Not Like Us</div>
-            <div class="album-subtitle" id="currently-played-subtitle">Kendrick Lamar</div>
-          </div>
+        <div class="top-section-media-player">
+          <span id="current-time">0:00</span>
+            <input type="range" value="0" min="0" max="100" step="0.1" id="progress-slider">
+            <span id="duration">0:00</span>
         </div>
-        <div class="media-player-control">
-          <img id="unmute-btn" src="unmute.svg" alt=""></img>
-          <img id="back-btn" src="back-play.svg" alt=""></img>
-          <img id="play-btn" src="play-circular.svg" alt=""></img>
-          <img id="skip-btn" src="front-play.svg" alt=""></img>
-          <img id="repeat-btn" src="repeat.svg" alt=""></img>
-        </div>
-        <div class="right-side-control">
-          <div class="button" id="randomize-btn">Random Song</div>
+        <div class="bottom-section-media-player">
+          <div class="mp-song-display">
+            <div class="mp-album-cover">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8_H5FC_4F4GNE-LhC8gXGwm19kuFGNImxGw&s" alt="" id="currently-played-album-cover"/>
+            </div>
+            <div class="album-label">
+              <div class="album-title" id="currently-played-title">Not Like Us</div>
+              <div class="album-subtitle" id="currently-played-subtitle">Kendrick Lamar</div>
+            </div>
+          </div>
+          <div class="media-player-control">
+            <img id="unmute-btn" src="unmute.svg" alt=""></img>
+            <img id="back-btn" src="back-play.svg" alt=""></img>
+            <img id="play-btn" src="play-circular.svg" alt=""></img>
+            <img id="skip-btn" src="front-play.svg" alt=""></img>
+            <img id="repeat-btn" src="repeat.svg" alt=""></img>
+          </div>
+          <div class="right-side-control">
+            <div id="randomize-btn" class="button">
+              <img id="shuffle-btn" src="shuffle.svg" alt=""></img>
+              <div>Random Song</div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
