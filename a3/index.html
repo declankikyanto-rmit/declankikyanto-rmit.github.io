@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script-branch.js" defer></script>
+    <title>Assignment 3 - OKC Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Noto+Sans+JP:wght@500&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <section class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-header">
+            <img class="navbar-logo" src="okc-logo.webp" alt="" />
+            <span class="navbar-title">Oklahoma City Thunder</span>
+          </div>
+          <div>2024-25 Season Stats</div>
+        </div>
+      </section>
+    </nav>
+    <main>
+      <section class="main-section">
+        <div class="main-left-container">
+          <div class="tab-section">
+            <div class="tab active-tab" id="starter-tab">Starter</div>
+            <div class="tab" id="bench-tab">Bench</div>
+          </div>
+          <div class="court-placeholder" src="basketballCourt.png">
+            <img src="basketballCourt.png" alt="" class="court-img">
+            <img class="player" id="PG" src="shai-gilgeous-alexander.webp">
+            <img class="player" id="SG" src="isaiah-joe.webp">
+            <img class="player" id="SF" src="lugentz-dortz.webp">
+            <img class="player" id="PF" src="jalen-williams.webp">
+            <img class="player" id="C" src="chet-holmgren.png">
+          </div>
+        </div>
+        <div class="main-right-container">
+          <button class="reset-button">View Team Lineup</button>
+          <div class="table-container">
+            <div class="table-header">Team Lineup</div>
+            <div class="table-main">
+              <table>
+                <thead>
+                  <tr>
+                    <th>STARTERS</th>
+                    <th>MINS</th>
+                    <th>PTS</th>
+                    <th>REB</th>
+                    <th>AST</th>
+                    <th>STL</th>
+                    <th>BLK</th>
+                  </tr>
+                </thead>
+                <tbody id="starterDisplay"></tbody>
+                <thead class="bench-table-header">
+                  <tr>
+                    <th>BENCH</th>
+                    <th>MINS</th>
+                    <th>PTS</th>
+                    <th>REB</th>
+                    <th>AST</th>
+                    <th>STL</th>
+                    <th>BLK</th>
+                  </tr>
+                  <tbody id="benchDisplay">
+                  </tbody>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
