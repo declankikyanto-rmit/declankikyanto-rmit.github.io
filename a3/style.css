@@ -1,3 +1,6 @@
+/* When starting this project, I wanted to create something that I have interest is, which is basketball (or sport). I started by using https://wordwall.net/resource/680216/nba-teams and eliminate some of the teams until its only 3 teams. From there I choose 1 team that i liked and also has a good colour palette. From there I started designing in Figma and then start copying it to HTML and CSS as I go */
+
+/* I created color-swatches (variables) so that I can use these color easily and consistently throughout my website development */
 :root {
   --border-color: rgba(220, 220, 220, 1);
   --gray-color: rgba(153, 153, 153, 1);
@@ -39,6 +42,7 @@ nav {
   align-items: center;
 }
 
+/* Initially with just the team title on the left-side, I felt the navbar was empty, so I just added another container that sets elements on the far ends and added an element "2024-2025 Team Stats" on the far right. */
 .navbar-container {
   display: flex;
   align-items: center;
@@ -46,6 +50,7 @@ nav {
   width: 100%;
   color: var(--white-color);
 }
+
 .navbar-header {
   display: flex;
   align-items: center;
@@ -84,7 +89,7 @@ main {
   /* background-color: pink; */
 }
 
-/* Left-hand side styling */
+/* Left-hand side styling, in here I just put in a div that has diplay: flex w/ flex-direction column and inside there are 2 more divs, the first one for tabs, and the second one is the court-illustration w/ players on it. */
 
 .main-left-container {
   width: 100%;
@@ -129,6 +134,7 @@ main {
   transform: scale(1);
 }
 
+/* I used position relative here so I can make the child within this element position absolute and I can position it anywhere basically. */
 .court-placeholder {
   position: relative;
   width: 100%;
@@ -152,8 +158,9 @@ main {
   cursor: pointer;
 }
 
+/* From there, instead of adding different classes for players, I use same class which is .player (look above) to style the size of the player and make it absolute. Then from there I use IDs to categorize different players and position it differently */
+
 #PG {
-  position: absolute;
   top: 27.5%;
   left: 18.25em;
 }
@@ -178,7 +185,7 @@ main {
   right: 8em;
 }
 
-/* Right-hand side styling */
+/* Right-hand side styling, in here I just put in table that list the data of the player, instead of using a lot of divs, I just use table which makes it more easier. */
 
 .main-right-container {
   width: 100%;

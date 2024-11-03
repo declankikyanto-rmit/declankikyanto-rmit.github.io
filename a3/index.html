@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Noto+Sans+JP:wght@500&family=Onest:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- I created a simple navbar section using semantic elements to let the browser know that this element is for a navigation bar. -->
     <nav>
       <section class="navbar">
         <div class="navbar-container">
@@ -22,9 +23,12 @@
         </div>
       </section>
     </nav>
+
+    <!-- Then for the main-content container I wanted to keep it simple, so what I did was to make one section that takes up the remaining space (100vh - height of navbar), and then inside it I seperate it into two container horizontally (left and right) -->
     <main>
       <section class="main-section">
         <div class="main-left-container">
+          <!-- For the left side container I have a (1) tab; (2) basketball court illustration w/ players -->
           <div class="tab-section">
             <div class="tab active-tab" id="starter-tab">Starter</div>
             <div class="tab" id="bench-tab">Bench</div>
@@ -38,6 +42,7 @@
             <img class="player" id="C" src="chet-holmgren.png">
           </div>
         </div>
+        <!-- For the right side container I have a (1) button that is set to display:none initially; (2) table that display the players statistics which is appened through JS -->
         <div class="main-right-container">
           <button class="reset-button">View Team Lineup</button>
           <div class="table-container">
@@ -55,6 +60,7 @@
                     <th>BLK</th>
                   </tr>
                 </thead>
+                <!-- by using this IDs such as "starterDisplay" and "benchDisplay", I am able to select where I want to append the table from JS -->
                 <tbody id="starterDisplay"></tbody>
                 <thead class="bench-table-header">
                   <tr>

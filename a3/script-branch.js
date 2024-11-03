@@ -1,3 +1,5 @@
+// Before I start developing my javaScript, I start by creating the "database" using arrays and objects. From there, I just listed out all the data that I feel would be useful and that I want to be displayed
+
 const playerList = [
   {
     orderNo: 1,
@@ -10,6 +12,7 @@ const playerList = [
     teamStarter: false,
     playerImage: "alex-caruso.webp",
     experience: "7 Years",
+    // If you look at here, there are nested array within objects. This is because I want to display a player's statistics not only in one specific year/timeframe, but multiple. But for this project I just want to display 2 years / player as I just want to learn how I can manipulate arrays and object and to see whether what I can execute what I have in mind.
     stats: [
       {
         year: "2024-25",
@@ -341,14 +344,18 @@ const playerList = [
   },
 ];
 
-// Updating the table through JS (taking data from arrays)
+// Updating the table through JS (taking data from arrays).
+// What I did here was initially make a variable that selects the container I want to display my data for each player group (Starter/Bench)
 
 const starterDisplay = document.querySelector("#starterDisplay");
 const benchDisplay = document.querySelector("#benchDisplay");
 
+// Then from there I used a forEach function that lets the function run through all the players in playerList array and cross check it whether the teamStarter value is true/false. If it's true it will be displayed in the "Starter", if it's false it will be displaye in the "Bench"
+
 var postStarterStats = "";
 for (var i = 0; i < playerList.length; i++) {
   if (playerList[i].teamStarter === true) {
+    // Here i just use template literals to add on row for each person, using the interpolation I retrieve data based on the [i] returned by the forEach function
     postStarterStats += `
     <tr>
         <td class="player-name">${playerList[i].playerName}<span class="player-position">${playerList[i].playerPosition}</span></td>
@@ -363,6 +370,7 @@ for (var i = 0; i < playerList.length; i++) {
   }
 }
 
+// Then after all of that is done I just append all of the content into the container using innerHTML
 starterDisplay.innerHTML = postStarterStats;
 
 var postBenchStats = "";
@@ -385,17 +393,25 @@ for (var i = 0; i < playerList.length; i++) {
 benchDisplay.innerHTML = postBenchStats;
 
 // Tab functionality + setting state
+// I started by again making variables for each button.
 var starterTab = document.getElementById("starter-tab");
 var benchTab = document.getElementById("bench-tab");
 
 var tabs = document.querySelectorAll(".tab");
 
-// Attach event listeners to tabs
+// Then I attached event listeners to listen for click for each button. E.g. if the starter button is clicked, it will run the setStatus function which will:
+// 1. Change the statusState to "Starter"
+// 2. Change the starterTab to "benchTab", which will reverse the classList.add and classList.remove (this will affect the button styling)
+// 3. Change the benchTab to "starterTab", same effect as the above
+// 4. Then I also add console.log to double check the currentStatus
+// 5. Finally, It will run the function displayPlayers, which is explain below later.
 starterTab.addEventListener("click", function () {
   setStatus("Starter", benchTab, starterTab);
   console.log(currentStatus);
   displayPlayers();
 });
+
+// Same thing for this function, but its just vice versa
 benchTab.addEventListener("click", function () {
   setStatus("Bench", starterTab, benchTab);
   console.log(currentStatus);
@@ -403,9 +419,10 @@ benchTab.addEventListener("click", function () {
   displayPlayers();
 });
 
-// Initial display: Show starters on page load
+// I let the Initial display: Show starters on page load
 let currentStatus = "Starter";
 
+// This function just change the currentStatus, and it just remove "active-tab" on the previous button and adds it on the clicked button
 function setStatus(statusState, starterTab, benchTab) {
   currentStatus = statusState;
 
@@ -416,10 +433,13 @@ function setStatus(statusState, starterTab, benchTab) {
 var courtPlaceholder = document.querySelector(".court-placeholder");
 
 // Displaying player based on currentStatus
+// So here I just created a variables called selectedPlayers that filter the objects (players) within the array playerList. It checks whether the player.teamStarter = currentStatus === "Starter". So if a player has teamStarter set to true, it will be declared as a one of the players in selectedPlayers.
 function displayPlayers() {
   const selectedPlayers = playerList.filter(
     (player) => player.teamStarter === (currentStatus === "Starter")
   );
+
+  // Then from there, the selectedPlayers goes through a forEach function again. This time it creates a variables that gets the player's position. Then it will get a unique id (position), whether its PG, SG, SG, etc. If the position exists within the HTML it will set the playerImage.src into that specific position image then it will be appended to the Court illustration.
 
   selectedPlayers.forEach((player) => {
     const playerImage = document.getElementById(player.playerPosition);
@@ -429,34 +449,36 @@ function displayPlayers() {
   });
 }
 
-//
-
 let selectedPlayer = null;
 const tableHeader = document.querySelector(".table-header");
 console.log(tableHeader);
 
+// This functions is used to create a functionality where if we click on a certain player, their statistics will show up on the right part of the screen.
+
 function onClickDisplay() {
   const playerImages = document.querySelectorAll(".player");
 
+  // Here we run a forEach function too loop through and gets every individual player from the list.
   playerImages.forEach((playerImage) => {
+    // Then we add event listener that listens for a click.
     playerImage.addEventListener("click", () => {
-      // Reset the scale of previously selected player
+      // When it's clicked the code checks for any existing player that has been clicked and reset the scale to 1.
       if (selectedPlayer) {
         selectedPlayer.style.transform = "scale(1)";
       }
 
-      // Set the new selected player
+      // Then from there, the clicked playerImage is set as the new selectedPlayer and the scale increase to 1.15
       selectedPlayer = playerImage;
       selectedPlayer.style.transform = "scale(1.15)";
 
-      // Find the full player data from playerList based on the position (id)
+      // Then it will find the full player data from playerList based on the position (id) and their teamStarter status (starter or bench), this way the code can get a specific player out of 10 players.
       const clickedPlayerData = playerList.find(
         (player) =>
           player.playerPosition === playerImage.id &&
           player.teamStarter === (currentStatus === "Starter")
       );
 
-      // Display full player data in the console (or wherever you need it)
+      // From there, the player exist in the playerList array, it will display that player data in the table.
       if (clickedPlayerData) {
         tableHeader.textContent = "Player Profile";
         displayPlayerProfile(clickedPlayerData);
@@ -465,14 +487,14 @@ function onClickDisplay() {
       }
     });
 
-    // Reset scale on mouse leave if not selected
+    // I also added an event listener that listen for a mouseleave. When a mouse leave this player, it's scale will reset to 1 (this is done so users know the players are clickable, and with the hover effect (scale size to 1.15), user knows which players are they're hovering on
     playerImage.addEventListener("mouseleave", () => {
       if (selectedPlayer !== playerImage) {
         playerImage.style.transform = "scale(1)";
       }
     });
 
-    // Enlarge on hover only if not selected
+    // This event listeners listens for a mouseenter for each playerImage, and if there is one, it will scale that playerImage into 1.15.
     playerImage.addEventListener("mouseenter", () => {
       if (selectedPlayer !== playerImage) {
         playerImage.style.transform = "scale(1.15)";
@@ -483,7 +505,8 @@ function onClickDisplay() {
 
 onClickDisplay();
 
-// Replacing table content
+// Finally, this is one of the last functionality: Replacing table content.
+// We use template literals with interpolation inside to add the player-data that will be displayed in the right-hand side container once a player is selected.
 
 function displayPlayerProfile(playerData) {
   const tableContent = document.querySelector(".table-main");
@@ -543,10 +566,10 @@ function displayPlayerProfile(playerData) {
       </tbody>
     </table>`;
 
-  // Get the tbody element to add rows for each year's stats
+  // Set a variable that selects #playerDisplay
   const playerDisplay = document.getElementById("playerDisplay");
 
-  // Loop through each year's stats and create a row for each
+  // It then loops each player stats (playerData.stats), and then for each stats it creates a new table row (tr), within each row there are table data (td) that represents each stats of that player.
   playerData.stats.forEach((stat) => {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -559,16 +582,18 @@ function displayPlayerProfile(playerData) {
       <td>${stat.STL}</td>
       <td>${stat.BLK}</td>
     `;
+    // Finally it appends each row to the playerDisplay variable
     playerDisplay.appendChild(row);
   });
 }
 
 // Reset back to Team Lineup
+// To create a button that reset the right-hand container to a team lineup display, I created two variables that declares the resetButton and tableContent
 
 const resetButton = document.querySelector(".reset-button");
 const tableContent = document.querySelector(".table-main");
 
-// Store the initial HTML for the team lineup
+// I also store the actual HTML of the initial team-lineup
 const initialTeamLineupHTML = `
   <table>
     <thead>
@@ -598,12 +623,16 @@ const initialTeamLineupHTML = `
   </table>
 `;
 
-// Function to reset the screen
+// Then I use this function to reset the right-hand container into the team lineup container.
 function resetToTeamLineup() {
   // tableContent.innerHTML = initialTeamLineupHTML;
+  // 1. It checks if the tableContent element exist or not, if it exist we proceed.
   if (tableContent) {
+    // 2. We then change the button "Go to Team Lineup" display to none
     resetButton.style.display = "none";
+    // 3. We change the header from "Player Profile" back to "Team Lineup"
     tableHeader.textContent = "Team Lineup";
+    // 4. We then add table (copied from HTML) to the tableContent container that displays player statistics (both Starters and Bench)
     tableContent.innerHTML = `
     <table>
         <thead>
@@ -633,16 +662,18 @@ function resetToTeamLineup() {
       </table>`;
   }
 
+  // 5. Here we just re-run the function that has been written on top to fill out the player statistics using JS.
   const starterDisplay = document.getElementById("starterDisplay");
   if (starterDisplay) {
     starterDisplay.innerHTML = postStarterStats;
   }
 
+  // 6. Same goes here for the bench
   const benchDisplay = document.getElementById("benchDisplay");
   if (benchDisplay) {
     benchDisplay.innerHTML = postBenchStats;
   }
 }
 
-// Add click event listener to reset button
+// 7. Finally we added event listeners to listen to click on the resetToTeamLineup button and execute the function
 resetButton.addEventListener("click", resetToTeamLineup);
